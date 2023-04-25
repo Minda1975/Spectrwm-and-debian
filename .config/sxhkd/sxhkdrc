@@ -1,0 +1,55 @@
+#
+# wm independent hotkeys
+#
+
+# terminal emulator
+alt + Return
+	kitty
+
+# Xterm
+alt + shift + Return
+	xterm
+
+# program launcher
+alt + p
+	dmenu_run -p Run
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+
+#
+# Open Apps in Terminal
+#
+alt + shift + {r, t, c, f}
+	st -e {ranger, htop, top, bpytop} 
+
+alt + m
+	st -e cmus
+
+#
+# dmenu shortcuts
+#
+
+
+# Poweroff / Reboot
+alt + shift + l
+	~/.local/bin/poweroffreboot
+
+# Open Image with sxiv
+alt + i
+	~/.local/bin/openimage
+
+# Open Videos with mpv (from vid folder)
+alt + v
+	~/.local/bin/openvideo
+
+
+#
+# Misc
+#
+
+# Take Screenshot
+Print
+	scrot ~/Изображения/screenshot-%Y-%m-%d-%T.png
