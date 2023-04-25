@@ -14,8 +14,8 @@ bindir="$HOME/.local/bin/"
 #install dependencies
 $ld apt install gcc make libxft-dev libxcb1-dev libxinerama-dev libx11-dev -yy
 
-#clone my build of st to ~/.local/src/st
-git clone https://gitlab.com/linuxdabbler/st $stdir
+#clone st to ~/.local/src/st
+git clone git clone https://git.suckless.org/st $stdir
 
 #build it...
 make --directory=$stdir
