@@ -1,19 +1,16 @@
 #!/bin/bash
 
-xrdb ~/.Xresources
+setxkbmap -layout "us,lt,ru" -option "grp:ctrl_shift_toggle"
 
-nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
+xrdb -merge ~/.Xresources
 
-nvidia-settings -a 'AllowFlipping=0'
+xcompmgr -fFs -I .06 -O .6 -D 6 &
 
-picom --backend glx --xrender-sync-fence &
 
-pgrep -x sxhkd > /dev/null || sxhkd &
+xscreensaver -nosplash &
 
-/usr/bin/lxpolkit &
-
-xautolock -time 10 -locker "i3lock-fancy" &
-
-nitrogen --restore
-
-exec spectrwm
+# Statusbar loop
+while true; do
+   xsetroot -name "$( date +"%F %R" )"
+   sleep 1s    # Update time every second
+done &
